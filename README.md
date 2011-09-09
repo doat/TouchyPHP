@@ -5,4 +5,4 @@ TouchyPHP is a simple PHP class used by the DoAT team in convergence with Touchy
 
 USAGE
 ---------------
-     >>> TouchyPHP::getFile($filename [, forceInclude])
+     TouchyPHP::getFile($filename [, forceInclude])
