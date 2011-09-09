@@ -67,7 +67,7 @@ class TouchyPHP {
                     $value = self::_getInternalTag($format, $content);
                 default:
                     // if filename can be converted to image data URI
-                    if (self::_canConvertToImageDataURI($filename)){
+                    if (self::_canConvertToImageDataURI($format)){
                         // get file content
                         $content = file_get_contents($filename);
                         
@@ -93,12 +93,9 @@ class TouchyPHP {
      * @param <string> $filename
      * @return <boolean>
      */
-    private function _canConvertToImageDataURI($filename) {
+    private function _canConvertToImageDataURI($format) {
         // list of image formats allowed for base64 encoding
         $formatArray = array('jpeg', 'jpg', 'jpe', 'png', 'gif');
-
-        // Get file format
-        $format = pathinfo($filename, PATHINFO_EXTENSION);
         
         // Remove trailing querystring
         if (strrpos($format, '?')){
